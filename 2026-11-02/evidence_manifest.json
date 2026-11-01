@@ -1,0 +1,47 @@
+
+{
+  "project": "ESUN AI Challenge 2026",
+  "trade_date": "2026-11-02",
+  "as_of_date": "2026-10-30",
+  "document_type": "PUBLIC_EVIDENCE_MANIFEST",
+  "repository": "ChiLee206/ESUN-AI-Challenge-Evidence",
+  "evidence_commit_short": "825b6f2",
+  "evidence_files": [
+    {
+      "id": "E1",
+      "file": "market_evidence.csv",
+      "url": "https://github.com/ChiLee206/ESUN-AI-Challenge-Evidence/blob/825b6f2/2026-11-02/market_evidence.csv",
+      "description": "Six stock closing prices for 2026-10-30",
+      "source_type": "Public summary of locally verified exchange prices"
+    },
+    {
+      "id": "E2",
+      "file": "strategy_summary.json",
+      "url": "https://github.com/ChiLee206/ESUN-AI-Challenge-Evidence/blob/825b6f2/2026-11-02/strategy_summary.json",
+      "description": "Five quantitative strategy comparisons",
+      "source_type": "Internally derived research summary"
+    },
+    {
+      "id": "E3",
+      "file": "ai_decision_summary.json",
+      "url": "https://github.com/ChiLee206/ESUN-AI-Challenge-Evidence/blob/825b6f2/2026-11-02/ai_decision_summary.json",
+      "description": "GPT model research preference and counter-evidence",
+      "source_type": "Internally derived AI decision summary"
+    }
+  ],
+  "original_research_sha256": {
+    "multi_strategy_2026-11-02.json": "474066be082b72d01de9ee7a6c4006462e361b7bb53872966d219fd6ce199cb6",
+    "AI_multi_strategy_review_2026-11-02.json": "e2c60963c1f5402d21c2f611e36a84acb1b4252dd40c896b55060b1088f402d9"
+  },
+  "privacy": {
+    "full_datapack_public": false,
+    "api_keys_public": false,
+    "account_details_public": false
+  },
+  "verification": {
+    "public_url_access": "PENDING",
+    "corporate_action_review": "PARTIAL",
+    "official_submission_acceptance": "NOT_VERIFIED"
+  },
+  "disclaimer": "Research evidence only. These summaries do not replace original exchange records or constitute an authorized trade instruction."
+}
