@@ -55,5 +55,20 @@
     "Corporate action validation is incomplete.",
     "One stock lacks a valid ranking.",
     "This document is not an official trade instruction."
-  ]
+  ],
+  
+  "data_quality": {
+    "checked_count": 150,
+    "ranked_count": 149,
+    "excluded_tickers": ["3718"],
+    "ranking_ready_for_decision": false
+  },
+  "trade_screening": {
+    "original_swap_pairs": 4,
+    "active_pairs_after_screening": 3,
+    "paused_ticker": "3374",
+    "screening_reason": "Special trading measures beginning 2026-11-02",
+    "research_only": true
+  }
+
 }
