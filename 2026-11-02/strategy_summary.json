@@ -1,0 +1,59 @@
+
+{
+  "project": "ESUN AI Challenge 2026",
+  "trade_date": "2026-11-02",
+  "as_of_date": "2026-10-30",
+  "document_type": "PUBLIC_STRATEGY_RESEARCH_SUMMARY",
+  "methodology": {
+    "universe_size": 150,
+    "valid_rankings": 149,
+    "strategy_count": 5,
+    "evaluation": "Historical momentum and risk proxies",
+    "is_backtest": false,
+    "price_adjustment": "Partial only"
+  },
+  "strategies": [
+    {
+      "name": "HOLD_BASELINE",
+      "momentum_score": 0.16335109,
+      "historical_volatility": 0.23332076,
+      "historical_max_drawdown": -0.05166984
+    },
+    {
+      "name": "MOMENTUM_20_60",
+      "momentum_score": 0.21466740,
+      "historical_volatility": 0.24385549,
+      "historical_max_drawdown": -0.03869145
+    },
+    {
+      "name": "ACCELERATION_5_10",
+      "momentum_score": 0.16893223,
+      "historical_volatility": 0.21696069,
+      "historical_max_drawdown": -0.04450159
+    },
+    {
+      "name": "PULLBACK_REVERSAL",
+      "momentum_score": 0.15589402,
+      "historical_volatility": 0.30269129,
+      "historical_max_drawdown": -0.08094039
+    },
+    {
+      "name": "RISK_ADJUSTED",
+      "momentum_score": 0.17470221,
+      "historical_volatility": 0.16602226,
+      "historical_max_drawdown": -0.02908046
+    }
+  ],
+  "research_conclusion": {
+    "highest_momentum_strategy": "MOMENTUM_20_60",
+    "lowest_historical_risk_strategy": "RISK_ADJUSTED",
+    "preferred_active_research": "MOMENTUM_20_60"
+  },
+  "limitations": [
+    "Historical momentum is not expected return.",
+    "Historical risk uses selected portfolios and is not a backtest.",
+    "Corporate action validation is incomplete.",
+    "One stock lacks a valid ranking.",
+    "This document is not an official trade instruction."
+  ]
+}
