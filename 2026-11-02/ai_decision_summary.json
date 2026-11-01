@@ -1,0 +1,54 @@
+
+{
+  "project": "ESUN AI Challenge 2026",
+  "trade_date": "2026-11-02",
+  "as_of_date": "2026-10-30",
+  "document_type": "PUBLIC_AI_DECISION_SUMMARY",
+  "model": {
+    "provider": "openai",
+    "name": "gpt-5.4-mini",
+    "role": "Multi-strategy research review"
+  },
+  "strategy_evaluation": {
+    "strategies_compared": [
+      "HOLD_BASELINE",
+      "MOMENTUM_20_60",
+      "ACCELERATION_5_10",
+      "PULLBACK_REVERSAL",
+      "RISK_ADJUSTED"
+    ],
+    "preferred_research_strategy": "MOMENTUM_20_60",
+    "alternative_strategy": "RISK_ADJUSTED",
+    "research_only": true
+  },
+  "decision_reasoning": {
+    "primary_reason": "The medium-term momentum strategy provides the strongest historical momentum signal among the five scenarios.",
+    "supporting_evidence": [
+      "Momentum strategy score: 0.2146674",
+      "Hold baseline score: 0.16335109",
+      "The strategy favors relatively strong stocks.",
+      "The signal is less dependent on very short-term acceleration."
+    ],
+    "counter_evidence": [
+      "Historical momentum does not guarantee future returns.",
+      "Higher exposure to volatile stocks may increase risk.",
+      "Transaction costs may offset the potential benefit.",
+      "Historical risk estimates contain selection bias."
+    ]
+  },
+  "risk_control": {
+    "alternative": "RISK_ADJUSTED",
+    "reason": "Lower historical volatility and drawdown proxies compared with the other strategies."
+  },
+  "limitations": [
+    "Corporate-action verification is incomplete.",
+    "One stock has no valid ranking.",
+    "Official trading rules require verification.",
+    "This is a research preference, not an authorized trade instruction."
+  ],
+  "decision_status": {
+    "research_preference_confirmed": true,
+    "ready_for_order_generation": false,
+    "official_submission": false
+  }
+}
