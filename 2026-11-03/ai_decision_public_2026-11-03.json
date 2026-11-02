@@ -1,0 +1,63 @@
+{
+  "trade_date": "2026-11-03",
+  "as_of_date": "2026-11-02",
+  "model_decision": {
+    "preferred_scenario": "HOLD",
+    "confidence": "high",
+    "reason_summary": "目前屬於研究而非正式下單決策，且存在多個未解阻擋：排名未完成（3718 缺價）、公司行動未全面校正、官方交易規則與 D-Plan 驗證未完成。雖然 ONE_SWAP 與 THREE_SWAP 的跨股動能分數略高於 HOLD，但差距小，且 THREE_SWAP 交易成本與換手顯著較高，無法在資料未清乾淨前合理支持以交易取代持有。",
+    "tradeoffs": [
+      "HOLD 成本最低、避免在資料品質未定時引入錯誤交易。",
+      "ONE_SWAP 只需單筆調整，成本與換手可控，但仍受未驗證的公司行動與未完成官方檢核限制。",
+      "THREE_SWAP 動能分數最高，但交易成本與換手最高，且對未校正資料最敏感。",
+      "20 日歷史風險代理值顯示 ONE_SWAP/THREE_SWAP 表面波動較低，但這是事後選擇偏差的研究代理，不能作為正式放大交易依據。",
+      "現金水位在三個情境下皆充足，資金約束不是主要問題，主要問題是資料與驗證完整性。"
+    ],
+    "unresolved_risks": [
+      "ranking_ready_for_decision=false，正式決策品質未達標。",
+      "3718 缺少可用收盤價，排名完整性不足。",
+      "公司行動未完成除權息、分割、減資等核對，且 2368 有需手動驗證的除權事件。",
+      "尚未完成官方交易規則、最新可下單報價與委託單位驗證。",
+      "COOLDOWN 與處置限制可能影響可執行性，且未完成全市場限制檢查。",
+      "ONE_SWAP/THREE_SWAP 的風險比較屬事後代理，不是回測或可驗證的預期績效。"
+    ],
+    "checks_before_formal_dplan": [
+      "補齊 3718 的有效收盤價與全體排名。",
+      "完成 2368 與其他相關持股的公司行動校正與人工覆核。",
+      "依提交時點重新檢查 TWSE/TPEx 交易限制、處置與冷卻規則。",
+      "使用官方可下單報價與委託單位重新驗證每筆交易數量與成交金額。",
+      "完成官方 D-Plan 語義驗收與提交授權檢查後，再比較 HOLD/ONE_SWAP/THREE_SWAP。"
+    ],
+    "evidence_refs": [
+      "BLOCKERS",
+      "RANK",
+      "COOLDOWN",
+      "HOLD",
+      "ONE_SWAP",
+      "THREE_SWAP",
+      "DP",
+      "S1",
+      "S7"
+    ]
+  },
+  "blocking_conditions": [
+    "ranking_ready_for_decision=false：品質報告未允許正式決策",
+    "有 1 檔股票未完成有效排名：3718",
+    "股票價格未完成除權息、分割、減資等公司行動核對",
+    "尚未使用官方交易規則、最新可下單報價及委託單位進行正式驗證",
+    "多策略結果僅作研究，未取得官方可提交授權",
+    "Critical: company actions in historical price windows not fully adjusted/validated",
+    "2368: 2026-09-30 capital-increase ex-rights event needs manual validation",
+    "Check all relevant TWSE/TPEx trading restrictions as of submission time",
+    "No official D-Plan semantic acceptance/official order validation performed"
+  ],
+  "agent_run": {
+    "provider": "openai",
+    "actual_model": "gpt-5.4-mini-2026-03-17",
+    "started_at": "2026-11-02T22:31:19+08:00",
+    "completed_at": "2026-11-02T22:31:28+08:00",
+    "code_version": "sha256:1769d94c083e",
+    "prompt_sha256": "18df79b19c73ab6d9032240b36a80f4325840f4419ddc37b2cd7b36f2c9febad",
+    "input_tokens": 2163,
+    "output_tokens": 650
+  }
+}
