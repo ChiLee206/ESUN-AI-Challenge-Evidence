@@ -1,0 +1,26 @@
+{
+  "trade_date": "2026-11-04",
+  "as_of_date": "2026-11-03",
+  "universe_count": 150,
+  "checked_count": 150,
+  "ranked_count": 149,
+  "excluded_count": 1,
+  "ranking_ready_for_decision": false,
+  "formula": "0.6 * (C_t/C_t-20 - 1) + 0.4 * (C_t/C_t-60 - 1)",
+  "price_adjustment": "unadjusted_close; corporate_action_adjustment_not_applied",
+  "data_sources": {
+    "TWSE": "https://www.twse.com.tw/exchangeReport/STOCK_DAY",
+    "TPEx": "https://www.tpex.org.tw/www/zh-tw/afterTrading/tradingStock"
+  },
+  "holding_price_checks": {
+    "checked_held_in_subset": 25,
+    "discrepancies": []
+  },
+  "excluded": [
+    {
+      "ticker": "3718",
+      "reason": "fetch_or_parse_error: 當月沒有可用收盤價"
+    }
+  ],
+  "note": "Research-only: no AI orders, no D-Plan produced. Ranking must be checked for dividends, splits and other corporate actions."
+}
