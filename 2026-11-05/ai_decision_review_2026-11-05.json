@@ -1,0 +1,98 @@
+{
+  "doc_type": "AI_RESEARCH_REVIEW_NOT_DPLAN",
+  "team_id": "TEAM_11705",
+  "trade_date": "2026-11-05",
+  "as_of_date": "2026-11-04",
+  "research_only": true,
+  "do_not_submit": true,
+  "ready_for_order_generation": false,
+  "official_checks_completed": false,
+  "model_decision": {
+    "preferred_scenario": "HOLD",
+    "confidence": "high",
+    "reason_summary": "雖然 S7 類情境的事後風險代理值較佳、且換股後動能分數略升，但目前仍有多項未解決的正式驗證阻礙：公司行動未完整核對、官方交易規則與最新可下單報價未驗證、部分歷史價格窗需人工校正，且 2368 另有除權相關人工查核需求。以研究預覽而言，現階段保守維持 HOLD 最符合資料完整性與合規審慎原則。",
+    "tradeoffs": [
+      "HOLD 的換手與成本最低，且避免在未完成公司行動/官方規則核對前承擔誤判風險。",
+      "S7 的風險代理值優於 S1，顯示若未來驗證完成，風險調整型換股較具研究吸引力。",
+      "ONE_SWAP_S7 成本與換手較低，但仍受相同未驗證阻礙約束，未足以超越 HOLD。",
+      "THREE_SWAP_S7 與 FOUR_SWAP_S7 動能分數更高，但換手、成本與集中度調整幅度也更大，在資料未完全驗證前不宜採用。",
+      "FOUR_SWAP_S1 的歷史動能分數最高，但同樣面臨較高交易成本與未驗證公司行動風險，不適合先行偏向進攻。"
+    ],
+    "unresolved_risks": [
+      "股票價格未完成除權息、分割、減資等公司行動核對。",
+      "尚未使用官方交易規則、最新可下單報價及委託單位進行正式驗證。",
+      "歷史價格窗仍有公司行動調整與驗證缺口，可能影響連續性判讀。",
+      "2368 於 2026-09-30 的增資除權事件需要人工驗證。",
+      "尚未完成所有相關 TWSE/TPEx 交易限制檢查。",
+      "本次僅為研究預覽，未完成正式 D-Plan 語義驗收與官方委託驗證。"
+    ],
+    "checks_before_formal_dplan": [
+      "逐檔核對 5371→3718 的價格連續性與公司行動調整，特別是最後收盤與首日收盤。",
+      "完成 2368 的 2026-09-30 增資除權資料人工校正。",
+      "重新確認所有候選標的的 TWSE/TPEx 交易限制與是否存在特別處置。",
+      "用官方最新可下單報價、委託單位與交易規則重算換股數量與成本。",
+      "完成正式 D-Plan/委託語義驗收後，再比較 HOLD 與 S7 類方案。"
+    ],
+    "evidence_refs": [
+      "DP",
+      "RANK",
+      "COOLDOWN",
+      "S1",
+      "S7",
+      "HOLD",
+      "BLOCKERS",
+      "ONE_SWAP_S7",
+      "THREE_SWAP_S7",
+      "FOUR_SWAP_S7",
+      "FOUR_SWAP_S1"
+    ]
+  },
+  "chosen_scenario_recalculated": {
+    "id": "HOLD",
+    "pairs": [],
+    "holdings_count_after": 25,
+    "largest_position_weight_pct": 3.7086,
+    "top_five_position_weight_pct": 18.1561,
+    "new_tickers": [],
+    "removed_tickers": [],
+    "gross_buy_twd": 0.0,
+    "gross_sell_twd": 0.0,
+    "estimated_cost_twd": 0.0,
+    "cash_after_twd": 161642394.57,
+    "cash_ratio_after": 0.17206239,
+    "one_way_turnover_pct_of_nav": 0.0,
+    "weighted_historical_momentum_score_not_expected_return": 0.09420051,
+    "local_checks_passed": true,
+    "official_checks_passed": false
+  },
+  "blocking_conditions": [
+    "股票價格未完成除權息、分割、減資等公司行動核對",
+    "尚未使用官方交易規則、最新可下單報價及委託單位進行正式驗證",
+    "Critical: company actions in historical price windows not fully adjusted/validated",
+    "2368: 2026-09-30 capital-increase ex-rights event needs manual validation",
+    "Check all relevant TWSE/TPEx trading restrictions as of submission time",
+    "No official D-Plan semantic acceptance/official order validation performed"
+  ],
+  "agent_run": {
+    "provider": "openai",
+    "requested_model": "gpt-5.4-mini-2026-03-17",
+    "actual_model": "gpt-5.4-mini-2026-03-17",
+    "response_id": "resp_080c777b36b75afd016aeb2637803887d2aa34a6e996c5f759",
+    "started_at": "2026-11-04T20:33:58+08:00",
+    "completed_at": "2026-11-04T20:34:06+08:00",
+    "code_version": "sha256:cf0c24725cd2",
+    "prompt_sha256": "870a79bd9136e073e4fa126031bd671e3e45e04a8761d9b20989da8cc5a1edab",
+    "input_tokens": 4376,
+    "output_tokens": 741,
+    "tool_use_count": 0,
+    "requested_store": false
+  },
+  "input_packet_sha256": "ea1e836c187bc4fb9fac413b8fcdd050764b99b8f542f3a838b2626f6a1278d7",
+  "source_sha256": {
+    "DataPack_441_2026-11-05.json": "1ea7393c33410a9a8a941b443cbfa59933efd46ef5d6502c4dd26efd98852dad",
+    "ranked_stocks_2026-11-05.csv": "501f508e48727e3137a299a66b80db55e93f7fa1d7557a4d68e6a403ea4e4315",
+    "ranking_quality_2026-11-05.json": "2658e360e56bfae1bf54d952facf5c4a0f4462ed6b995aef707809278095fefe",
+    "multi_strategy_cooldown_2026-11-05.json": "3b8b022636473da81df624e45d94120a187d00c0cbfb6566e59311babcd4c0ab",
+    "eligible_150.csv": "1ff80ec10a5739504cac55f5ac099aebac648df9cda4bd2b5e767c851909db2e"
+  }
+}
