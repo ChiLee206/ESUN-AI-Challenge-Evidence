@@ -1,0 +1,38 @@
+{
+  "trade_date": "2026-11-10",
+  "as_of_date": "2026-11-09",
+  "universe_count": 150,
+  "checked_count": 150,
+  "ranked_count": 150,
+  "excluded_count": 0,
+  "ranking_ready_for_decision": true,
+  "formula": "0.6 * (C_t/C_t-20 - 1) + 0.4 * (C_t/C_t-60 - 1)",
+  "price_adjustment": "unadjusted_close; corporate_action_adjustment_not_applied",
+  "corporate_lineage": {
+    "ticker": "3718",
+    "predecessor": "5371",
+    "share_exchange_ratio": "1:1",
+    "predecessor_last_trade": "2026-08-21",
+    "successor_first_trade": "2026-09-03",
+    "predecessor_history_used": true,
+    "transition_audit": {
+      "predecessor_last_close_date": "2026-08-21",
+      "predecessor_last_close": 83.5,
+      "successor_first_close_date": "2026-09-04",
+      "successor_first_close": 75.5,
+      "observed_gap_return": -0.09580838,
+      "gap_explanation": "Includes the halt and holding-company revaluation; not a same-day return."
+    },
+    "review_note": "Price-history continuity is a research assumption; check corporate actions and the last 5371 / first 3718 closes."
+  },
+  "data_sources": {
+    "TWSE": "https://www.twse.com.tw/exchangeReport/STOCK_DAY",
+    "TPEx": "https://www.tpex.org.tw/www/zh-tw/afterTrading/tradingStock"
+  },
+  "holding_price_checks": {
+    "checked_held_in_subset": 25,
+    "discrepancies": []
+  },
+  "excluded": [],
+  "note": "Research-only: no AI orders, no D-Plan produced. Ranking must be checked for dividends, splits and other corporate actions."
+}

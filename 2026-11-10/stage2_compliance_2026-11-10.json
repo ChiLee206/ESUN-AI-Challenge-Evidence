@@ -1,0 +1,249 @@
+{
+  "doc_type": "ESUN_STAGE2_COMPLIANCE_AUDIT_NOT_DPLAN",
+  "team_id": "TEAM_11705",
+  "trade_date": "2026-11-10",
+  "as_of_date": "2026-11-09",
+  "created_at": "2026-11-09T20:53:16.952494+08:00",
+  "source_rules": "AI CUP 2026 competition rules (updated 2026-10-05), pages 7-10",
+  "scenario": "FIVE_SWAP_S1",
+  "ai_research_confidence": "medium",
+  "research_only": true,
+  "do_not_submit": true,
+  "order_generation_authorized": false,
+  "official_acceptance_verified": false,
+  "checks": {
+    "data_snapshot": {
+      "state": "PASS_LOCAL",
+      "detail": "missing=[], violations=0"
+    },
+    "snapshot_nav_consistency": {
+      "state": "PASS_LOCAL",
+      "detail": "cash + sum(holdings × T-1 close) = 896375344.57; DataPack NAV = 896375344.57"
+    },
+    "ai_source_provenance": {
+      "state": "PASS_LOCAL",
+      "detail": "Input hashes match AI Review",
+      "verified": {
+        "DataPack_441_2026-11-10.json": true,
+        "ranked_stocks_2026-11-10.csv": true,
+        "ranking_quality_2026-11-10.json": true,
+        "multi_strategy_cooldown_2026-11-10.json": true
+      }
+    },
+    "valid_trade_sides_and_lots": {
+      "state": "PASS_LOCAL",
+      "detail": "T+1 full-lot trades; no short positions, no same-day buy/sell code",
+      "trades_not_orders": [
+        {
+          "ticker": "2412",
+          "side": "BUY",
+          "shares": 184000,
+          "reference_close": 159.0
+        },
+        {
+          "ticker": "3189",
+          "side": "SELL",
+          "shares": 34000,
+          "reference_close": 690.0
+        },
+        {
+          "ticker": "3045",
+          "side": "BUY",
+          "shares": 224000,
+          "reference_close": 131.0
+        },
+        {
+          "ticker": "8046",
+          "side": "SELL",
+          "shares": 26000,
+          "reference_close": 933.0
+        },
+        {
+          "ticker": "6446",
+          "side": "BUY",
+          "shares": 21000,
+          "reference_close": 1370.0
+        },
+        {
+          "ticker": "4958",
+          "side": "SELL",
+          "shares": 59000,
+          "reference_close": 398.0
+        },
+        {
+          "ticker": "2881",
+          "side": "BUY",
+          "shares": 191000,
+          "reference_close": 153.5
+        },
+        {
+          "ticker": "2368",
+          "side": "SELL",
+          "shares": 30000,
+          "reference_close": 894.0
+        },
+        {
+          "ticker": "2610",
+          "side": "BUY",
+          "shares": 1351000,
+          "reference_close": 21.75
+        },
+        {
+          "ticker": "3008",
+          "side": "SELL",
+          "shares": 5000,
+          "reference_close": 4925.0
+        }
+      ]
+    },
+    "eligible_stock_pool": {
+      "state": "PASS_LOCAL",
+      "detail": "25 ending tickers checked against 150-stock organizer PDF; out-of-list=[]"
+    },
+    "position_count": {
+      "state": "PASS_LOCAL",
+      "detail": "25 before; 25 after; official permitted 20..30"
+    },
+    "ai_cash_math": {
+      "state": "PASS_LOCAL",
+      "detail": "AI estimated cash cross-checked against independent fee/tax recomputation"
+    },
+    "official_fee_tax": {
+      "state": "PASS_LOCAL",
+      "detail": "Fee 0.1425% on both sides; sell tax 0.3%, as specified in competition rules",
+      "fee_twd": 382922.79,
+      "sell_tax_twd": 367935.0,
+      "estimated_total_cost_twd": 750857.79
+    },
+    "nominal_cash": {
+      "state": "PASS_LOCAL",
+      "detail": "Only at 2026-11-09 reference close, NOT 2026-11-10 official average price",
+      "estimated_cash_twd": 137463786.78,
+      "estimated_nav_after_costs_twd": 895624486.78,
+      "estimated_cash_ratio": 0.15348373
+    },
+    "nominal_posttrade_nav": {
+      "state": "PASS_LOCAL",
+      "detail": "Ending positions + cash = 895624486.78; pretrade NAV - fees/tax = 895624486.78"
+    },
+    "single_stock_caps": {
+      "state": "PASS_LOCAL",
+      "detail": "2330 max 25% / other tickers max 10% using T-1 closes",
+      "breaches": [],
+      "max_holding_weight": 0.03838964
+    },
+    "local_turnover_policy": {
+      "state": "PASS_LOCAL",
+      "detail": "15% is a LOCAL research control, not an official contest rule; keep original AI strategy policy unless Agent revises it"
+    },
+    "official_average_execution": {
+      "state": "PENDING",
+      "detail": "2026-11-10 official daily average execution prices cannot be known before trade; only pretrade stress scenarios computed"
+    },
+    "active_share": {
+      "state": "PENDING",
+      "detail": "Organizer provides 30-ETF name list but not each ETF top 15 constituent names/weights; no comparison can be computed"
+    },
+    "corporate_action_price_adjustments": {
+      "state": "PENDING",
+      "detail": "The ranking uses unadjusted closes; verify dividends, splits, rights, in particular 2368 historic issue; rules describe adjustments to holdings/cash but not momentum series"
+    },
+    "restricted_trading_and_disposition": {
+      "state": "PENDING",
+      "detail": "Contest does not explicitly forbid disposition stocks, but comprehensive official 150-ticker trade status and backend semantics are unverified; 3189 has 2026-11-10 disposition alert"
+    },
+    "official_dplan_accepted": {
+      "state": "PENDING",
+      "detail": "Local schema validation and authoritative competition backend acceptance are separate; no D-Plan generated or submitted"
+    },
+    "source_strategy_alignment": {
+      "state": "PENDING",
+      "detail": "Contest requires the actual AI Agent to autonomously generate trades and related D-Plan; review-to-order citation chain not yet verified"
+    }
+  },
+  "cash_scenarios": [
+    {
+      "buy_price_increase_pct": 0.0,
+      "seller_price_change_pct": 0,
+      "cash_after_twd": 137463786.78,
+      "cash_nonnegative": true,
+      "sell_proceeds_not_used_to_fund_buy": true,
+      "one_way_turnover_pct_local_only": 14.989131039124384
+    },
+    {
+      "buy_price_increase_pct": 2.0,
+      "seller_price_change_pct": 0,
+      "cash_after_twd": 134538168.7,
+      "cash_nonnegative": true,
+      "sell_proceeds_not_used_to_fund_buy": true,
+      "one_way_turnover_pct_local_only": 15.15209039636783
+    },
+    {
+      "buy_price_increase_pct": 5.0,
+      "seller_price_change_pct": 0,
+      "cash_after_twd": 130149741.59,
+      "cash_nonnegative": true,
+      "sell_proceeds_not_used_to_fund_buy": true,
+      "one_way_turnover_pct_local_only": 15.396529432232999
+    },
+    {
+      "buy_price_increase_pct": 10.0,
+      "seller_price_change_pct": 0,
+      "cash_after_twd": 122835696.41,
+      "cash_nonnegative": true,
+      "sell_proceeds_not_used_to_fund_buy": true,
+      "one_way_turnover_pct_local_only": 15.803927825341615
+    },
+    {
+      "buy_price_increase_pct": 20.0,
+      "seller_price_change_pct": 0,
+      "cash_after_twd": 108207606.04,
+      "cash_nonnegative": true,
+      "sell_proceeds_not_used_to_fund_buy": false,
+      "one_way_turnover_pct_local_only": 16.618724611558847
+    }
+  ],
+  "active_share": {
+    "complete": false,
+    "comparisons": []
+  },
+  "source_sha256": {
+    "data\\DataPack_441_2026-11-10.json": "182c06a87fc6e6bddc6d9f7917e682e8c9caf6cc2dedc14160b215b4e1411791",
+    "output\\ai_decision_review_two_stage_2026-11-10.json": "7b56531d23734c93c0634a6f9933e24b4e5026e930bccb7e8297d412e49ce5ae",
+    "config/eligible_150_official.csv": "7d0b48aa690462529f95bbed91156b2090aea712c37188b8c3d192a74f04b880",
+    "config/active_etf_roster_official.csv": "c911879e0e2f20097b8cba5e70bb4986e26903f489292a8736ae1478bc231073",
+    "output\\ranked_stocks_2026-11-10.csv": "dfd55a36fb9662240f9da29eee4c4c934c328a8db5402337c3b14ae3987efef1",
+    "output\\ranking_quality_2026-11-10.json": "644fea6c277c31c6aa06caa45e43ab6d0b3fd899ddb6a724281c1046d20394ae",
+    "output\\multi_strategy_cooldown_2026-11-10.json": "c865bcdfe747f75cff8d8d2bccd6012204ee7cd200ba52bd714119dbe43cc046"
+  },
+  "provenance": {
+    "eligible_stocks": "Organizer PDF 150-stock list v1; TWSE 100 + TPEx 50",
+    "active_etfs": "Organizer PDF active ETF list as of 2026-09-11; 30 ETFs but no holdings",
+    "pricing": "DataPack closing prices for current holdings; AI scenario closing reference for new buys",
+    "manual_overrides": "none; buy/sell quantities loaded unchanged from AI research file"
+  },
+  "reference_summary": {
+    "initial_nav_twd": 896375344.57,
+    "initial_cash_twd": 161642394.57,
+    "gross_buy_twd": 146072750.0,
+    "gross_sell_twd": 122645000.0,
+    "estimated_fee_tax_twd": 750857.79,
+    "reference_post_trade_nav_twd": 895624486.78,
+    "estimated_post_cash_twd": 137463786.78,
+    "estimated_post_cash_ratio": 0.15348373,
+    "one_way_turnover_pct_of_original_nav": 14.989131039124384,
+    "local_turnover_limit_only_not_official_pct": 15,
+    "local_turnover_within_limit_at_reference_closes": true
+  },
+  "local_failed_checks": [],
+  "pending_checks": [
+    "official_average_execution",
+    "active_share",
+    "corporate_action_price_adjustments",
+    "restricted_trading_and_disposition",
+    "official_dplan_accepted",
+    "source_strategy_alignment"
+  ],
+  "overall_status": "PENDING_OFFICIAL_AND_REFERENCE_VALIDATION",
+  "safe_for_official_submission": false
+}

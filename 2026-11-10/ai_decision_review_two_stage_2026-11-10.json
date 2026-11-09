@@ -1,0 +1,152 @@
+{
+  "doc_type": "AI_TWO_STAGE_RESEARCH_AND_COMPLIANCE_NOT_DPLAN",
+  "team_id": "TEAM_11705",
+  "trade_date": "2026-11-10",
+  "as_of_date": "2026-11-09",
+  "research_only": true,
+  "do_not_submit": true,
+  "ready_for_order_generation": false,
+  "stage1_research": {
+    "evaluation_separate_from_compliance": true,
+    "model_decision": {
+      "preferred_scenario": "FIVE_SWAP_S1",
+      "confidence": "medium",
+      "reason_summary": "綜合動能、風險代理與交易成本後，FIVE_SWAP_S1 最均衡：在 5 組換股中擁有最高的動能分數，且相較 HOLD 的事後風險代理明顯較佳，最大回撤也略優於 FIVE_SWAP_S7。雖然 FIVE_SWAP_S7 的波動率更低，但 S1 的動能與回撤表現稍占優，且成本與周轉仍在本地限制內，因此整體研究候選性最高。",
+      "ranked_scenarios": [
+        "FIVE_SWAP_S1",
+        "FIVE_SWAP_S7",
+        "THREE_SWAP_S7",
+        "ONE_SWAP_S7",
+        "HOLD"
+      ],
+      "tradeoffs": [
+        "FIVE_SWAP_S1：動能最高、回撤略佳，但成本與周轉接近上限，仍屬較積極調整。",
+        "FIVE_SWAP_S7：波動率最低，風險代理較穩，但動能略低於 S1。",
+        "THREE_SWAP_S7：比單一換股更能提升分散與動能，但部分換股未重算風險代理，確定性較弱。",
+        "ONE_SWAP_S7：交易成本較低、調整幅度小，但動能提升有限，結構改善不如 5 組方案。",
+        "HOLD：零成本且最簡單，但事後風險代理與動能均不占優，研究上吸引力最低。"
+      ],
+      "research_uncertainties": [
+        "部分換股情境沒有重算的歷史風險代理，無法直接與 5 組情境完全同尺度比較。",
+        "風險比較屬事後選取的固定權重回看，不是回測或預測，存在選擇偏差。",
+        "成交與公司行動仍可能有資料缺口，雖然本次未出現明顯新買禁限股。",
+        "S1 與 S7 的差異幅度不大，排名對權重與風險偏好的敏感度較高。"
+      ],
+      "evidence_refs": [
+        "S1",
+        "S7",
+        "HOLD"
+      ]
+    },
+    "chosen_scenario_recalculated": {
+      "id": "FIVE_SWAP_S1",
+      "pairs": [
+        {
+          "sell_ticker": "3189",
+          "sell_shares": 34000,
+          "sell_close": 690.0,
+          "buy_ticker": "2412",
+          "buy_shares": 184000,
+          "buy_close": 159.0,
+          "sell_value_twd": 23460000.0,
+          "buy_value_twd": 29256000.0
+        },
+        {
+          "sell_ticker": "8046",
+          "sell_shares": 26000,
+          "sell_close": 933.0,
+          "buy_ticker": "3045",
+          "buy_shares": 224000,
+          "buy_close": 131.0,
+          "sell_value_twd": 24258000.0,
+          "buy_value_twd": 29344000.0
+        },
+        {
+          "sell_ticker": "4958",
+          "sell_shares": 59000,
+          "sell_close": 398.0,
+          "buy_ticker": "6446",
+          "buy_shares": 21000,
+          "buy_close": 1370.0,
+          "sell_value_twd": 23482000.0,
+          "buy_value_twd": 28770000.0
+        },
+        {
+          "sell_ticker": "2368",
+          "sell_shares": 30000,
+          "sell_close": 894.0,
+          "buy_ticker": "2881",
+          "buy_shares": 191000,
+          "buy_close": 153.5,
+          "sell_value_twd": 26820000.0,
+          "buy_value_twd": 29318500.0
+        },
+        {
+          "sell_ticker": "3008",
+          "sell_shares": 5000,
+          "sell_close": 4925.0,
+          "buy_ticker": "2610",
+          "buy_shares": 1351000,
+          "buy_close": 21.75,
+          "sell_value_twd": 24625000.0,
+          "buy_value_twd": 29384250.0
+        }
+      ],
+      "holdings_count_after": 25,
+      "gross_buy_twd": 146072750.0,
+      "gross_sell_twd": 122645000.0,
+      "estimated_cost_twd": 750857.79,
+      "cash_after_twd": 137463786.78,
+      "cash_ratio_after": 0.15335516,
+      "one_way_turnover_pct_of_nav": 14.9891,
+      "weighted_historical_momentum_score_not_expected_return": 0.06578796,
+      "local_checks_passed": true,
+      "official_checks_passed": false
+    },
+    "model_was_not_shown_submission_blockers": true
+  },
+  "stage2_compliance": {
+    "status": "BLOCKED_PENDING_OFFICIAL_VALIDATION",
+    "official_checks_completed": false,
+    "order_generation_authorized": false,
+    "dplan_submission_authorized": false,
+    "unresolved_blockers": [
+      "股票價格未完成除權息、分割、減資等公司行動核對",
+      "尚未使用官方交易規則、最新可下單報價及委託單位進行正式驗證",
+      "Critical: company actions in historical price windows not fully adjusted/validated",
+      "2368: 2026-09-30 capital-increase ex-rights event needs manual validation",
+      "Check all relevant TWSE/TPEx trading restrictions as of submission time",
+      "No official D-Plan semantic acceptance/official order validation performed",
+      "官方委託規則與 D-Plan 語意驗證尚未完成",
+      "歷史價格未完成除權息/公司行動調整驗證"
+    ],
+    "required_next_checks": [
+      "人工核對除權息、分割、減資及 2368 增資除權歷史數據",
+      "交易日更新後重新確認可下單價格、張數與個股限制/處置資訊",
+      "依主辦方當期規則驗證現金、權重、換手及交易資金來源",
+      "確認 D-Plan v4.3 Schema、引用證據 URL 可存取及官方語意接受結果"
+    ],
+    "note": "僅為研究評估的獨立閘門；不代表 HOLD 或任何交易方案完成正式提交驗證"
+  },
+  "agent_run": {
+    "provider": "openai",
+    "requested_model": "gpt-5.4-mini-2026-03-17",
+    "actual_model": "gpt-5.4-mini-2026-03-17",
+    "response_id": "resp_09f77efedd71e07f016af1b954c11487d2a639bc9dfe5d9191",
+    "started_at": "2026-11-09T20:15:14+08:00",
+    "completed_at": "2026-11-09T20:15:23+08:00",
+    "code_version": "sha256:d558d1ca3616",
+    "prompt_sha256": "23dff6551392ea32dbf940e097935b6ea09cb6e063a87a0b4115d9c30351aa8a",
+    "input_tokens": 2820,
+    "output_tokens": 955,
+    "tool_use_count": 0,
+    "requested_store": false
+  },
+  "input_packet_sha256": "29537c110ee3783e124af12bd53fa19574a12bec101d4eca79b558ba7d7681b2",
+  "source_sha256": {
+    "DataPack_441_2026-11-10.json": "182c06a87fc6e6bddc6d9f7917e682e8c9caf6cc2dedc14160b215b4e1411791",
+    "ranked_stocks_2026-11-10.csv": "dfd55a36fb9662240f9da29eee4c4c934c328a8db5402337c3b14ae3987efef1",
+    "ranking_quality_2026-11-10.json": "644fea6c277c31c6aa06caa45e43ab6d0b3fd899ddb6a724281c1046d20394ae",
+    "multi_strategy_cooldown_2026-11-10.json": "c865bcdfe747f75cff8d8d2bccd6012204ee7cd200ba52bd714119dbe43cc046"
+  }
+}

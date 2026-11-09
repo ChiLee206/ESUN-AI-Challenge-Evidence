@@ -1,0 +1,660 @@
+{
+  "doc_type": "MULTI_STRATEGY_RESEARCH_NOT_DPLAN",
+  "research_only": true,
+  "do_not_submit": true,
+  "ready_for_order_generation": false,
+  "team_id": "TEAM_11705",
+  "trade_date": "2026-11-10",
+  "as_of_date": "2026-11-09",
+  "generated_at": "2026-11-09T19:51:40+08:00",
+  "account_snapshot": {
+    "cash_twd": 161642394.57,
+    "nav_twd": 896375344.5699999,
+    "holdings_count": 25
+  },
+  "quality": {
+    "checked_count": 150,
+    "ranked_count": 150,
+    "excluded_count": 0,
+    "ranking_ready_for_decision": true,
+    "blockers": [
+      "股票價格未完成除權息、分割、減資等公司行動核對",
+      "尚未使用官方交易規則、最新可下單報價及委託單位進行正式驗證",
+      "Critical: company actions in historical price windows not fully adjusted/validated",
+      "2368: 2026-09-30 capital-increase ex-rights event needs manual validation",
+      "Check all relevant TWSE/TPEx trading restrictions as of submission time",
+      "No official D-Plan semantic acceptance/official order validation performed"
+    ]
+  },
+  "strategy_methods": {
+    "HOLD_BASELINE": "Maintain all DataPack holdings without trading",
+    "MOMENTUM_20_60": "Rank by 60% 20d plus 40% 60d price momentum, expressed as cross-sectional percentile; S1 new buys require S7>=0.55; all strategies use 0.10 min gap and cooldown",
+    "ACCELERATION_5_10": "65% 5d return percentile plus 35% 5d acceleration versus compounded 20d trend percentile; 10d is reported for inspection",
+    "PULLBACK_REVERSAL": "Require positive 60d return and negative 5d return; 65% deepest 5d pullback percentile + 35% strongest 60d trend percentile",
+    "RISK_ADJUSTED": "55% momentum percentile + 30% low-volatility percentile + 15% low-drawdown percentile"
+  },
+  "assumptions": {
+    "stock_count_selection": 25,
+    "max_swap_pairs": 6,
+    "selection_method": "Fixed top-stock and bottom-exit candidate pairing; best feasible combination, heuristic not global optimum",
+    "lot_size_shares": 1000,
+    "maximum_single_stock_weight_local": 0.1,
+    "cash_max_local": 0.25,
+    "reserve_fraction_of_starting_cash": 0.05,
+    "buy_price_upside_stress": 0.01,
+    "max_one_way_turnover_local": 0.15,
+    "fee_both_sides": 0.001425,
+    "sell_tax": 0.003,
+    "sale_proceeds_not_used_to_fund_purchases": true,
+    "unadjusted_prices": true,
+    "corporate_action_verified": false,
+    "3718_5371_predecessor_prices_used": true,
+    "3718_5371_lineage_research_only": "A 1:1 share exchange is NOT a corporate-action-adjusted price series; do not treat transition gap as a same-day return",
+    "official_trade_constraints_verified": false,
+    "risk_proxy_not_backtest": "Today's ex-post chosen names/weights applied to prior 20 daily returns: selection/lookahead bias, not a backtest or future expected risk",
+    "no_llm_api_call": true,
+    "not_an_order": true,
+    "bidirectional_cooldown": {
+      "cooldown_prior_trading_days": 2,
+      "net_recent_buys_protected_from_selling": [],
+      "net_recent_sells_blocked_from_rebuying": [],
+      "data_source": "adjacent official DataPack settlement snapshots",
+      "caveat": "Net changes may not reveal intraday round trips; corporate actions need manual review"
+    },
+    "entry_safety_filters": {
+      "dated_disposition_buy_block": [
+        "3374"
+      ],
+      "all_new_buy_blocks": [
+        "3374"
+      ],
+      "min_signal_gap": 0.1,
+      "min_s7_score_for_s1_new_buy": 0.55,
+      "verified_disposition_source": "https://www.tpex.org.tw/www/zh-tw/bulletin/disposal?code=3374&endDate=2026%2F11%2F10&order=date&response=html&startDate=2026%2F07%2F13&type=code",
+      "not_full_market_disposition_scan": true
+    }
+  },
+  "source_sha256": {
+    "DataPack_441_2026-11-10.json": "182c06a87fc6e6bddc6d9f7917e682e8c9caf6cc2dedc14160b215b4e1411791",
+    "ranked_stocks_2026-11-10.csv": "dfd55a36fb9662240f9da29eee4c4c934c328a8db5402337c3b14ae3987efef1",
+    "ranking_quality_2026-11-10.json": "644fea6c277c31c6aa06caa45e43ab6d0b3fd899ddb6a724281c1046d20394ae",
+    "eligible_150.csv": "1ff80ec10a5739504cac55f5ac099aebac648df9cda4bd2b5e767c851909db2e"
+  },
+  "corporate_lineage_research": {
+    "ticker": "3718",
+    "predecessor": "5371",
+    "share_exchange_ratio": "1:1",
+    "predecessor_last_trade": "2026-08-21",
+    "successor_first_trade": "2026-09-03",
+    "predecessor_history_used": true,
+    "transition_audit": {
+      "predecessor_last_close_date": "2026-08-21",
+      "predecessor_last_close": 83.5,
+      "successor_first_close_date": "2026-09-04",
+      "successor_first_close": 75.5,
+      "observed_gap_return": -0.09580838,
+      "gap_explanation": "Includes the halt and holding-company revaluation; not a same-day return."
+    },
+    "review_note": "Price-history continuity is a research assumption; check corporate actions and the last 5371 / first 3718 closes."
+  },
+  "strategies": [
+    {
+      "strategy": "HOLD_BASELINE",
+      "research_only": true,
+      "selected_swap_pairs": 0,
+      "holding_count_after": 25,
+      "new_tickers": [],
+      "removed_tickers": [],
+      "gross_buy_twd": 0.0,
+      "gross_sell_twd": 0.0,
+      "estimated_cost_twd": 0.0,
+      "cash_after_twd": 161642394.57,
+      "cash_ratio_after": 0.18032892,
+      "one_way_turnover_pct_of_nav": 0.0,
+      "weighted_historical_momentum_score_not_expected_return": 0.01122948,
+      "historical_portfolio_risk_proxy": {
+        "aligned_daily_returns_count": 20,
+        "realized_20d_fixed_weight_annual_volatility": 0.3612111,
+        "realized_20d_fixed_weight_max_drawdown": -0.14183587,
+        "warning": "使用今日選出的股票及固定今日權重回看歷史；非回測、具事後選擇偏差"
+      },
+      "top_candidates": [
+        {
+          "ticker": "1101",
+          "name": "台泥",
+          "selection_score": 0.0
+        },
+        {
+          "ticker": "1301",
+          "name": "台塑",
+          "selection_score": 0.0
+        },
+        {
+          "ticker": "1303",
+          "name": "南亞",
+          "selection_score": 0.0
+        },
+        {
+          "ticker": "1802",
+          "name": "台玻",
+          "selection_score": 0.0
+        },
+        {
+          "ticker": "1815",
+          "name": "富喬",
+          "selection_score": 0.0
+        },
+        {
+          "ticker": "2368",
+          "name": "金像電",
+          "selection_score": 0.0
+        },
+        {
+          "ticker": "2603",
+          "name": "長榮",
+          "selection_score": 0.0
+        },
+        {
+          "ticker": "2615",
+          "name": "萬海",
+          "selection_score": 0.0
+        },
+        {
+          "ticker": "2801",
+          "name": "彰銀",
+          "selection_score": 0.0
+        },
+        {
+          "ticker": "2880",
+          "name": "華南金",
+          "selection_score": 0.0
+        }
+      ],
+      "preview_swaps_not_orders": []
+    },
+    {
+      "strategy": "MOMENTUM_20_60",
+      "research_only": true,
+      "selected_swap_pairs": 5,
+      "holding_count_after": 25,
+      "new_tickers": [
+        "2412",
+        "2610",
+        "2881",
+        "3045",
+        "6446"
+      ],
+      "removed_tickers": [
+        "2368",
+        "3008",
+        "3189",
+        "4958",
+        "8046"
+      ],
+      "gross_buy_twd": 146072750.0,
+      "gross_sell_twd": 122645000.0,
+      "estimated_cost_twd": 750857.79,
+      "cash_after_twd": 137463786.78,
+      "cash_ratio_after": 0.15335516,
+      "one_way_turnover_pct_of_nav": 14.9891,
+      "weighted_historical_momentum_score_not_expected_return": 0.06578796,
+      "historical_portfolio_risk_proxy": {
+        "aligned_daily_returns_count": 20,
+        "realized_20d_fixed_weight_annual_volatility": 0.27206565,
+        "realized_20d_fixed_weight_max_drawdown": -0.08439126,
+        "warning": "使用今日選出的股票及固定今日權重回看歷史；非回測、具事後選擇偏差"
+      },
+      "top_candidates": [
+        {
+          "ticker": "1815",
+          "name": "富喬",
+          "selection_score": 1.0
+        },
+        {
+          "ticker": "2412",
+          "name": "中華電",
+          "selection_score": 0.993289
+        },
+        {
+          "ticker": "2884",
+          "name": "玉山金",
+          "selection_score": 0.986577
+        },
+        {
+          "ticker": "2891",
+          "name": "中信金",
+          "selection_score": 0.979866
+        },
+        {
+          "ticker": "3045",
+          "name": "台灣大",
+          "selection_score": 0.973154
+        },
+        {
+          "ticker": "2892",
+          "name": "第一金",
+          "selection_score": 0.966443
+        },
+        {
+          "ticker": "5876",
+          "name": "上海商銀",
+          "selection_score": 0.959732
+        },
+        {
+          "ticker": "6446",
+          "name": "藥華藥",
+          "selection_score": 0.95302
+        },
+        {
+          "ticker": "2801",
+          "name": "彰銀",
+          "selection_score": 0.946309
+        },
+        {
+          "ticker": "2603",
+          "name": "長榮",
+          "selection_score": 0.939597
+        }
+      ],
+      "preview_swaps_not_orders": [
+        {
+          "sell_ticker": "3189",
+          "sell_shares": 34000,
+          "buy_ticker": "2412",
+          "buy_shares": 184000,
+          "signal_gap": 0.758389
+        },
+        {
+          "sell_ticker": "8046",
+          "sell_shares": 26000,
+          "buy_ticker": "3045",
+          "buy_shares": 224000,
+          "signal_gap": 0.731544
+        },
+        {
+          "sell_ticker": "4958",
+          "sell_shares": 59000,
+          "buy_ticker": "6446",
+          "buy_shares": 21000,
+          "signal_gap": 0.644295
+        },
+        {
+          "sell_ticker": "2368",
+          "sell_shares": 30000,
+          "buy_ticker": "2881",
+          "buy_shares": 191000,
+          "signal_gap": 0.463087
+        },
+        {
+          "sell_ticker": "3008",
+          "sell_shares": 5000,
+          "buy_ticker": "2610",
+          "buy_shares": 1351000,
+          "signal_gap": 0.33557
+        }
+      ]
+    },
+    {
+      "strategy": "ACCELERATION_5_10",
+      "research_only": true,
+      "selected_swap_pairs": 4,
+      "holding_count_after": 25,
+      "new_tickers": [
+        "2610",
+        "6446",
+        "6919",
+        "8415"
+      ],
+      "removed_tickers": [
+        "3105",
+        "3189",
+        "4958",
+        "8046"
+      ],
+      "gross_buy_twd": 116881650.0,
+      "gross_sell_twd": 96204000.0,
+      "estimated_cost_twd": 592259.05,
+      "cash_after_twd": 140372485.52,
+      "cash_ratio_after": 0.15660012,
+      "one_way_turnover_pct_of_nav": 11.886,
+      "weighted_historical_momentum_score_not_expected_return": 0.03977903,
+      "historical_portfolio_risk_proxy": {
+        "aligned_daily_returns_count": 20,
+        "realized_20d_fixed_weight_annual_volatility": 0.30263754,
+        "realized_20d_fixed_weight_max_drawdown": -0.10745024,
+        "warning": "使用今日選出的股票及固定今日權重回看歷史；非回測、具事後選擇偏差"
+      },
+      "top_candidates": [
+        {
+          "ticker": "6446",
+          "name": "藥華藥",
+          "selection_score": 1.0
+        },
+        {
+          "ticker": "6919",
+          "name": "康霈",
+          "selection_score": 0.993289
+        },
+        {
+          "ticker": "2610",
+          "name": "華航",
+          "selection_score": 0.986577
+        },
+        {
+          "ticker": "8415",
+          "name": "大國鋼",
+          "selection_score": 0.975168
+        },
+        {
+          "ticker": "2618",
+          "name": "長榮航",
+          "selection_score": 0.966107
+        },
+        {
+          "ticker": "4123",
+          "name": "晟德",
+          "selection_score": 0.960067
+        },
+        {
+          "ticker": "1802",
+          "name": "台玻",
+          "selection_score": 0.941946
+        },
+        {
+          "ticker": "2891",
+          "name": "中信金",
+          "selection_score": 0.919463
+        },
+        {
+          "ticker": "1590",
+          "name": "亞德客-KY",
+          "selection_score": 0.916107
+        },
+        {
+          "ticker": "2207",
+          "name": "和泰車",
+          "selection_score": 0.911745
+        }
+      ],
+      "preview_swaps_not_orders": [
+        {
+          "sell_ticker": "3105",
+          "sell_shares": 56000,
+          "buy_ticker": "6919",
+          "buy_shares": 417000,
+          "signal_gap": 0.971477
+        },
+        {
+          "sell_ticker": "3189",
+          "sell_shares": 34000,
+          "buy_ticker": "6446",
+          "buy_shares": 21000,
+          "signal_gap": 0.982215
+        },
+        {
+          "sell_ticker": "8046",
+          "sell_shares": 26000,
+          "buy_ticker": "2610",
+          "buy_shares": 1351000,
+          "signal_gap": 0.911745
+        },
+        {
+          "sell_ticker": "4958",
+          "sell_shares": 59000,
+          "buy_ticker": "8415",
+          "buy_shares": 777000,
+          "signal_gap": 0.805705
+        }
+      ]
+    },
+    {
+      "strategy": "PULLBACK_REVERSAL",
+      "research_only": true,
+      "selected_swap_pairs": 4,
+      "holding_count_after": 25,
+      "new_tickers": [
+        "2609",
+        "2890",
+        "3324",
+        "6147"
+      ],
+      "removed_tickers": [
+        "2368",
+        "2880",
+        "2891",
+        "6415"
+      ],
+      "gross_buy_twd": 116846300.0,
+      "gross_sell_twd": 122042700.0,
+      "estimated_cost_twd": 706544.93,
+      "cash_after_twd": 166132249.65,
+      "cash_ratio_after": 0.18533782,
+      "one_way_turnover_pct_of_nav": 13.3253,
+      "weighted_historical_momentum_score_not_expected_return": 0.00097169,
+      "historical_portfolio_risk_proxy": {
+        "aligned_daily_returns_count": 20,
+        "realized_20d_fixed_weight_annual_volatility": 0.36931452,
+        "realized_20d_fixed_weight_max_drawdown": -0.15490731,
+        "warning": "使用今日選出的股票及固定今日權重回看歷史；非回測、具事後選擇偏差"
+      },
+      "top_candidates": [
+        {
+          "ticker": "3105",
+          "name": "穩懋",
+          "selection_score": 0.938255
+        },
+        {
+          "ticker": "3324",
+          "name": "雙鴻",
+          "selection_score": 0.835235
+        },
+        {
+          "ticker": "6147",
+          "name": "頎邦",
+          "selection_score": 0.816107
+        },
+        {
+          "ticker": "6505",
+          "name": "台塑化",
+          "selection_score": 0.768121
+        },
+        {
+          "ticker": "3044",
+          "name": "健鼎",
+          "selection_score": 0.76443
+        },
+        {
+          "ticker": "1303",
+          "name": "南亞",
+          "selection_score": 0.742282
+        },
+        {
+          "ticker": "3653",
+          "name": "健策",
+          "selection_score": 0.683221
+        },
+        {
+          "ticker": "2615",
+          "name": "萬海",
+          "selection_score": 0.660738
+        },
+        {
+          "ticker": "2603",
+          "name": "長榮",
+          "selection_score": 0.639262
+        },
+        {
+          "ticker": "2801",
+          "name": "彰銀",
+          "selection_score": 0.614765
+        }
+      ],
+      "preview_swaps_not_orders": [
+        {
+          "sell_ticker": "2891",
+          "sell_shares": 453000,
+          "buy_ticker": "3324",
+          "buy_shares": 25000,
+          "signal_gap": 1.058054
+        },
+        {
+          "sell_ticker": "2880",
+          "sell_shares": 675000,
+          "buy_ticker": "6147",
+          "buy_shares": 188000,
+          "signal_gap": 1.034899
+        },
+        {
+          "sell_ticker": "6415",
+          "sell_shares": 64000,
+          "buy_ticker": "2609",
+          "buy_shares": 511000,
+          "signal_gap": 0.504362
+        },
+        {
+          "sell_ticker": "2368",
+          "sell_shares": 30000,
+          "buy_ticker": "2890",
+          "buy_shares": 698000,
+          "signal_gap": 0.383221
+        }
+      ]
+    },
+    {
+      "strategy": "RISK_ADJUSTED",
+      "research_only": true,
+      "selected_swap_pairs": 5,
+      "holding_count_after": 25,
+      "new_tickers": [
+        "2412",
+        "2618",
+        "2886",
+        "3045",
+        "5880"
+      ],
+      "removed_tickers": [
+        "3008",
+        "3105",
+        "3189",
+        "4958",
+        "8046"
+      ],
+      "gross_buy_twd": 146710500.0,
+      "gross_sell_twd": 120829000.0,
+      "estimated_cost_twd": 743730.79,
+      "cash_after_twd": 135017163.78,
+      "cash_ratio_after": 0.1506257,
+      "one_way_turnover_pct_of_nav": 14.9234,
+      "weighted_historical_momentum_score_not_expected_return": 0.05851504,
+      "historical_portfolio_risk_proxy": {
+        "aligned_daily_returns_count": 20,
+        "realized_20d_fixed_weight_annual_volatility": 0.26427419,
+        "realized_20d_fixed_weight_max_drawdown": -0.08965156,
+        "warning": "使用今日選出的股票及固定今日權重回看歷史；非回測、具事後選擇偏差"
+      },
+      "top_candidates": [
+        {
+          "ticker": "2412",
+          "name": "中華電",
+          "selection_score": 0.983221
+        },
+        {
+          "ticker": "3045",
+          "name": "台灣大",
+          "selection_score": 0.95906
+        },
+        {
+          "ticker": "2884",
+          "name": "玉山金",
+          "selection_score": 0.953356
+        },
+        {
+          "ticker": "5876",
+          "name": "上海商銀",
+          "selection_score": 0.92349
+        },
+        {
+          "ticker": "2891",
+          "name": "中信金",
+          "selection_score": 0.92047
+        },
+        {
+          "ticker": "2801",
+          "name": "彰銀",
+          "selection_score": 0.919128
+        },
+        {
+          "ticker": "2892",
+          "name": "第一金",
+          "selection_score": 0.915101
+        },
+        {
+          "ticker": "5880",
+          "name": "合庫金",
+          "selection_score": 0.898322
+        },
+        {
+          "ticker": "2610",
+          "name": "華航",
+          "selection_score": 0.893289
+        },
+        {
+          "ticker": "2886",
+          "name": "兆豐金",
+          "selection_score": 0.887584
+        }
+      ],
+      "preview_swaps_not_orders": [
+        {
+          "sell_ticker": "3189",
+          "sell_shares": 34000,
+          "buy_ticker": "2412",
+          "buy_shares": 184000,
+          "signal_gap": 0.747315
+        },
+        {
+          "sell_ticker": "4958",
+          "sell_shares": 59000,
+          "buy_ticker": "3045",
+          "buy_shares": 224000,
+          "signal_gap": 0.68255
+        },
+        {
+          "sell_ticker": "8046",
+          "sell_shares": 26000,
+          "buy_ticker": "5880",
+          "buy_shares": 1057000,
+          "signal_gap": 0.610403
+        },
+        {
+          "sell_ticker": "3008",
+          "sell_shares": 5000,
+          "buy_ticker": "2886",
+          "buy_shares": 556000,
+          "signal_gap": 0.50604
+        },
+        {
+          "sell_ticker": "3105",
+          "sell_shares": 56000,
+          "buy_ticker": "2618",
+          "buy_shares": 669000,
+          "signal_gap": 0.453691
+        }
+      ]
+    }
+  ],
+  "cooldown_audit": [
+    {
+      "settlement_date": "2026-11-09",
+      "order_outcome": "executed",
+      "net_bought": [],
+      "net_sold": []
+    },
+    {
+      "settlement_date": "2026-11-06",
+      "order_outcome": "executed",
+      "net_bought": [],
+      "net_sold": []
+    }
+  ]
+}
